@@ -1,15 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const modelo = document.querySelector("#modelo-polar");
+  const rotables = document.querySelectorAll(".rotating");
 
-  if (!modelo) return;
+  rotables.forEach((entity) => {
+    entity.addEventListener("model-loaded", () => {
+      let rotation = 0;
 
-  // Rotación suave continua
-  modelo.addEventListener("model-loaded", () => {
-    let rotacion = 0;
-
-    setInterval(() => {
-      rotacion += 0.5;
-      modelo.setAttribute("rotation", `0 ${rotacion} 0`);
-    }, 50);
+      setInterval(() => {
+        rotation += 0.3;
+        entity.setAttribute("rotation", `0 ${rotation} 0`);
+      }, 50);
+    });
   });
 });

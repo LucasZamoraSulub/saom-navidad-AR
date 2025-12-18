@@ -8,13 +8,9 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no"
     />
 
-    <!-- A-Frame -->
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
-
-    <!-- AR.js para A-Frame -->
     <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
 
-    <!-- Lógica propia -->
     <script src="js/main.js"></script>
   </head>
 
@@ -24,19 +20,148 @@
       arjs="sourceType: webcam; debugUIEnabled: false;"
       renderer="logarithmicDepthBuffer: true;"
     >
-      <!-- Marcador personalizado -->
-      <a-marker
-        type="pattern"
-        url="assets/markers/pattern-marker.patt"
-        id="marker-navidad"
-      >
-        <!-- Modelo 3D -->
+      <!-- Polar -->
+      <a-marker type="pattern" url="assets/markers/pattern-marker.patt">
+        <a-entity gltf-model="assets/models/polar.glb" scale="0.5 0.5 0.5">
+        </a-entity>
+      </a-marker>
+
+      <!-- Christmas elements -->
+      <a-marker type="pattern" url="assets/markers/candy_cane.patt">
+        <a-entity gltf-model="assets/models/candy_cane.glb"> </a-entity>
+      </a-marker>
+
+      <a-marker type="pattern" url="assets/markers/christmas_card.patt">
+        <a-entity gltf-model="assets/models/christmas_card.glb"> </a-entity>
+      </a-marker>
+
+      <a-marker type="pattern" url="assets/markers/christmas_cookies.patt">
+        <a-entity gltf-model="assets/models/christmas_cookies.glb"> </a-entity>
+      </a-marker>
+
+      <a-marker type="pattern" url="assets/markers/christmas_sock.patt">
+        <a-entity gltf-model="assets/models/christmas_sock.glb"> </a-entity>
+      </a-marker>
+
+      <a-marker type="pattern" url="assets/markers/christmas_wreath.patt">
+        <a-entity gltf-model="assets/models/christmas_wreath.glb"> </a-entity>
+      </a-marker>
+
+      <a-marker type="pattern" url="assets/markers/christmas_hat.patt">
+        <a-entity gltf-model="assets/models/santa_claus.glb"> </a-entity>
+      </a-marker>
+
+      <!-- Fireplace -->
+      <a-marker type="pattern" url="assets/markers/fireplace_fire.patt">
         <a-entity
-          id="modelo-polar"
-          gltf-model="assets/models/polar.glb"
+          gltf-model="assets/models/fireplace_fire.glb"
+          scale="0.6 0.6 0.6"
+        >
+        </a-entity>
+      </a-marker>
+
+      <!-- Gifts -->
+      <a-marker type="pattern" url="assets/markers/gift.patt">
+        <a-entity
+          gltf-model="assets/models/gift.glb"
+          scale="0.4 0.4 0.4"
+        ></a-entity>
+      </a-marker>
+
+      <a-marker type="pattern" url="assets/markers/gift_2.patt">
+        <a-entity
+          gltf-model="assets/models/gift_2.glb"
+          scale="0.4 0.4 0.4"
+        ></a-entity>
+      </a-marker>
+
+      <a-marker type="pattern" url="assets/markers/gift_3.patt">
+        <a-entity
+          gltf-model="assets/models/gift_3.glb"
+          scale="0.4 0.4 0.4"
+        ></a-entity>
+      </a-marker>
+
+      <a-marker type="pattern" url="assets/markers/gift_4.patt">
+        <a-entity
+          gltf-model="assets/models/gift_4.glb"
+          scale="0.4 0.4 0.4"
+        ></a-entity>
+      </a-marker>
+
+      <a-marker type="pattern" url="assets/markers/gift_5.patt">
+        <a-entity
+          gltf-model="assets/models/gift_5.glb"
+          scale="0.4 0.4 0.4"
+        ></a-entity>
+      </a-marker>
+
+      <!-- Gingerbread -->
+
+      <a-marker type="pattern" url="assets/markers/gingerbread_cottage.patt">
+        <a-entity
+          gltf-model="assets/models/gingerbread_cottage.glb"
+          scale="0.4 0.4 0.4"
+        ></a-entity>
+      </a-marker>
+
+      <a-marker type="pattern" url="assets/markers/gingerbread.patt">
+        <a-entity
+          gltf-model="assets/models/gingerbread.glb"
+          scale="0.4 0.4 0.4"
+        ></a-entity>
+      </a-marker>
+
+      <!-- Snow Sphere -->
+      <a-marker type="pattern" url="assets/markers/snow_sphere.patt">
+        <a-entity
+          gltf-model="assets/models/snow_sphere.glb"
           scale="0.5 0.5 0.5"
-          position="0 0 0"
-          rotation="0 0 0"
+        ></a-entity>
+      </a-marker>
+
+      <!-- Snowflake -->
+      <a-marker type="pattern" url="assets/markers/snowflake.patt">
+        <a-entity
+          gltf-model="assets/models/snowflake.glb"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+      </a-marker>
+
+      <!-- Star -->
+      <a-marker type="pattern" url="assets/markers/star.patt">
+        <a-entity
+          gltf-model="assets/models/star.glb"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+      </a-marker>
+
+      <!-- Extra -->
+      <a-marker type="pattern" url="assets/markers/linux.patt">
+        <a-entity
+          gltf-model="assets/models/linux.glb"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+      </a-marker>
+
+      <a-marker type="pattern" url="assets/markers/windows.patt">
+        <a-entity
+          gltf-model="assets/models/windows.glb"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+      </a-marker>
+
+      <a-marker type="pattern" url="assets/markers/meme_cat.patt">
+        <a-entity
+          gltf-model="assets/models/meme_cat.glb"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+      </a-marker>
+
+      <a-marker type="pattern" url="assets/markers/meme_cat_2.patt">
+        <a-entity
+          gltf-model="assets/models/meme_cat_2.glb"
+          scale="0.3 0.3 0.3"
         ></a-entity>
       </a-marker>
 
