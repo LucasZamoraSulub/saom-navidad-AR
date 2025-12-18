@@ -10,6 +10,7 @@
 
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
 
     <script src="js/main.js"></script>
   </head>
@@ -50,7 +51,7 @@
       <a-marker type="pattern" url="assets/markers/pattern-marker.patt">
         <a-entity
           gltf-model="assets/models/santa_claus.glb"
-          animation-mixer
+          animation-mixer="loop: repeat"
           scale="0.4 0.4 0.4"
         >
         </a-entity>
