@@ -23,45 +23,37 @@
         logarithmicDepthBuffer: true;
         colorManagement: true;
         physicallyCorrectLights: true;
-        exposure: 1.2;
-        toneMapping: ACESFilmic;
+        outputEncoding: sRGBEncoding;
+        toneMapping: ACESFilmicToneMapping;
+        toneMappingExposure: 1.1;
       "
     >
-      <!-- 🔆 ILUMINACIÓN GLOBAL OPTIMIZADA PARA PBR -->
-
-      <!-- Luz ambiental base -->
+      <!-- 🌍 LUZ BASE -->
       <a-entity light="type: ambient; intensity: 1.2"></a-entity>
 
-      <!-- Luz hemisférica (clave para metales) -->
+      <!-- ☀️ LUZ HEMISFÉRICA (CLAVE PARA METALES) -->
       <a-entity
         light="
           type: hemisphere;
-          intensity: 1.1;
-          color: #ffffff;
+          skyColor: #ffffff;
           groundColor: #444444;
+          intensity: 1.1
         ">
       </a-entity>
 
-      <!-- Luz principal frontal -->
+      <!-- 🔦 LUZ PRINCIPAL -->
       <a-entity
-        light="type: directional; intensity: 1.5"
-        position="0 4 4">
+        light="type: directional; intensity: 1.3"
+        position="2 4 2">
       </a-entity>
 
-      <!-- Luz lateral -->
-      <a-entity
-        light="type: directional; intensity: 0.9"
-        position="4 2 -2">
-      </a-entity>
-
-      <!-- Luz de relleno trasera -->
+      <!-- 🔦 LUZ DE RELLENO -->
       <a-entity
         light="type: directional; intensity: 0.6"
-        position="-4 3 2">
+        position="-2 2 -2">
       </a-entity>
 
-      <!-- 🔆 FIN ILUMINACIÓN -->
-
+      <!-- ================= MODELOS ================= -->
 
       <!-- Polar -->
       <a-marker type="pattern" url="assets/markers/pattern-marker.patt">
