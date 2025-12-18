@@ -172,9 +172,10 @@
       <a-marker type="pattern" url="assets/markers/pattern-snowflake.patt">
         <a-entity
           gltf-model="assets/models/snowflake.glb"
-          animation="property: rotation; to: 0 360 0; loop: true; dur: 6000"
           scale="2 2 2"
           rotation="-90 0 0"
+          animation="property: rotation; to: -90 360 0; loop: true; dur: 12000; easing: linear"
+          animation__float="property: position; dir: alternate; dur: 4000; easing: easeInOutSine; to: 0 0.2 0"
         ></a-entity>
       </a-marker>
 
