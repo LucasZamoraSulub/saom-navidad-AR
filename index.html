@@ -48,12 +48,14 @@
       </a-marker>
 
       <a-marker type="pattern" url="assets/markers/christmas_hat.patt">
-        <a-entity gltf-model="assets/models/santa_claus.glb" animation-mixer></a-entity>
+        <a-entity class="animated" gltf-model="assets/models/santa_claus.glb">
+        </a-entity>
       </a-marker>
 
       <!-- Fireplace -->
       <a-marker type="pattern" url="assets/markers/fireplace_fire.patt">
         <a-entity
+          class="animated"
           gltf-model="assets/models/fireplace_fire.glb"
           scale="0.6 0.6 0.6"
         >

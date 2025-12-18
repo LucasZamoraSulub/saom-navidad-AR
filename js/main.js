@@ -1,14 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const rotables = document.querySelectorAll(".rotating");
+  const animatedModels = document.querySelectorAll(".animated");
 
-  rotables.forEach((entity) => {
+  animatedModels.forEach((entity) => {
+    const marker = entity.closest("a-marker");
+
+    if (!marker) return;
+
+    // Cuando el modelo termina de cargar
     entity.addEventListener("model-loaded", () => {
-      let rotation = 0;
+      // Espera a que el marcador sea visible
+      marker.addEventListener("markerFound", () => {
+        entity.setAttribute("animation-mixer", {
+          loop: "repeat",
+          timeScale: 1
+        });
+      });
 
-      setInterval(() => {
-        rotation += 0.3;
-        entity.setAttribute("rotation", `0 ${rotation} 0`);
-      }, 50);
+      // Detiene animación cuando se pierde el marcador
+      marker.addEventListener("markerLost", () => {
+        entity.removeAttribute("animation-mixer");
+      });
     });
   });
 });
