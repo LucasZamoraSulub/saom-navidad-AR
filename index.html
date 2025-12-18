@@ -19,8 +19,22 @@
     <a-scene
       embedded
       arjs="sourceType: webcam; debugUIEnabled: false;"
-      renderer="logarithmicDepthBuffer: true;"
+      renderer="
+        logarithmicDepthBuffer: true;
+        colorManagement: true;
+        physicallyCorrectLights: true;
+      "
     >
+      <!-- 🔆 ILUMINACIÓN (OBLIGATORIA PARA PBR) -->
+      <a-entity light="type: ambient; intensity: 0.9"></a-entity>
+
+      <a-entity light="type: directional; intensity: 1.2" position="2 4 1">
+      </a-entity>
+
+      <a-entity light="type: directional; intensity: 0.6" position="-2 2 -1">
+      </a-entity>
+      <!-- 🔆 FIN ILUMINACIÓN -->
+       
       <!-- Polar -->
       <a-marker type="pattern" url="assets/markers/pattern-marker.patt">
         <a-entity
