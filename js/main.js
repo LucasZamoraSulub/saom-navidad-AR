@@ -1,48 +1,56 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  // Todos los modelos (animados o no)
+  const models = document.querySelectorAll(".ar-model");
   const markers = document.querySelectorAll("a-marker");
-  let activeMarker = null;
+
+  // Ocultar todos los modelos al iniciar
+  models.forEach(model => {
+    model.object3D.visible = false;
+  });
 
   markers.forEach(marker => {
-    const entity = marker.querySelector("a-entity");
-    if (!entity) return;
 
-    // Ocultar todos los modelos al inicio
-    entity.setAttribute("visible", false);
+    const model = marker.querySelector(".ar-model");
+    if (!model) return;
 
-    marker.addEventListener("markerFound", () => {
+    model.addEventListener("model-loaded", () => {
 
-      // Ocultar el modelo anterior si existe
-      if (activeMarker && activeMarker !== marker) {
-        const prevEntity = activeMarker.querySelector("a-entity");
-        if (prevEntity) {
-          prevEntity.setAttribute("visible", false);
-          prevEntity.removeAttribute("animation-mixer");
-        }
-      }
+      marker.addEventListener("markerFound", () => {
 
-      // Mostrar este modelo
-      entity.setAttribute("visible", true);
+        // Ocultar TODOS los modelos primero
+        models.forEach(m => {
+          m.object3D.visible = false;
 
-      // Activar animación solo si corresponde
-      if (entity.classList.contains("animated")) {
-        entity.setAttribute("animation-mixer", {
-          loop: "repeat",
-          timeScale: 1
+          // Detener animaciones activas
+          if (m.classList.contains("animated")) {
+            m.removeAttribute("animation-mixer");
+          }
         });
-      }
 
-      activeMarker = marker;
+        // Mostrar solo el modelo del marker actual
+        model.object3D.visible = true;
+
+        // Activar animación solo si aplica
+        if (model.classList.contains("animated")) {
+          model.setAttribute("animation-mixer", {
+            loop: "repeat",
+            timeScale: 1
+          });
+        }
+      });
+
+      marker.addEventListener("markerLost", () => {
+
+        model.object3D.visible = false;
+
+        if (model.classList.contains("animated")) {
+          model.removeAttribute("animation-mixer");
+        }
+      });
+
     });
 
-    marker.addEventListener("markerLost", () => {
-      entity.setAttribute("visible", false);
-      entity.removeAttribute("animation-mixer");
-
-      if (activeMarker === marker) {
-        activeMarker = null;
-      }
-    });
   });
 
 });
