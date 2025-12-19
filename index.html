@@ -28,246 +28,152 @@
         toneMappingExposure: 1.1;
       "
     >
-      <!-- LUCES -->
+      <!-- 🌍 LUZ BASE -->
       <a-entity light="type: ambient; intensity: 1.2"></a-entity>
+
+      <!-- ☀️ LUZ HEMISFÉRICA (CLAVE PARA METALES) -->
       <a-entity
-        light="type: hemisphere; skyColor: #ffffff; groundColor: #444444; intensity: 1.1"
-      ></a-entity>
-      <a-entity
-        light="type: directional; intensity: 1.3"
-        position="2 4 2"
-      ></a-entity>
-      <a-entity
-        light="type: directional; intensity: 0.6"
-        position="-2 2 -2"
-      ></a-entity>
+        light="
+          type: hemisphere;
+          skyColor: #ffffff;
+          groundColor: #444444;
+          intensity: 1.1
+        "
+      >
+      </a-entity>
+
+      <!-- 🔦 LUZ PRINCIPAL -->
+      <a-entity light="type: directional; intensity: 1.3" position="2 4 2">
+      </a-entity>
+
+      <!-- 🔦 LUZ DE RELLENO -->
+      <a-entity light="type: directional; intensity: 0.6" position="-2 2 -2">
+      </a-entity>
 
       <!-- ================= MODELOS ================= -->
 
-      <a-marker
-        type="pattern"
-        url="assets/markers/pattern-polar.patt"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
-      >
-        <a-entity>
-          <a-entity
-            gltf-model="assets/models/polar.glb"
-            scale="2 2 2"
-            visible="false"
-          ></a-entity>
-        </a-entity>
+      <a-marker type="pattern" url="assets/markers/pattern-polar.patt">
+        <a-entity
+          gltf-model="assets/models/polar.glb"
+          scale="2 2 2"
+          visible="false"
+        ></a-entity>
       </a-marker>
 
       <a-marker
         type="pattern"
         url="assets/markers/pattern-christmas_cookies.patt"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
       >
-        <a-entity>
-          <a-entity
-            gltf-model="assets/models/christmas_cookies.glb"
-            scale="2 2 2"
-            visible="false"
-          ></a-entity>
-        </a-entity>
+        <a-entity
+          gltf-model="assets/models/christmas_cookies.glb"
+          scale="2 2 2"
+          position="0 1 0"
+          visible="false"
+        ></a-entity>
       </a-marker>
 
-      <a-marker
-        type="pattern"
-        url="assets/markers/pattern-christmas_sock.patt"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
-      >
-        <a-entity rotation="-90 0 0">
-          <a-entity
-            gltf-model="assets/models/christmas_sock.glb"
-            scale="4 4 4"
-            visible="false"
-          ></a-entity>
-        </a-entity>
+      <a-marker type="pattern" url="assets/markers/pattern-christmas_sock.patt">
+        <a-entity
+          gltf-model="assets/models/christmas_sock.glb"
+          scale="4 4 4"
+          rotation="-90 0 0"
+          position="0 1 0"
+          visible="false"
+        ></a-entity>
       </a-marker>
 
       <a-marker
         type="pattern"
         url="assets/markers/pattern-christmas_wreath.patt"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
       >
-        <a-entity rotation="-90 0 0">
-          <a-entity
-            gltf-model="assets/models/christmas_wreath.glb"
-            scale="2 2 2"
-            visible="false"
-          ></a-entity>
-        </a-entity>
+        <a-entity
+          gltf-model="assets/models/christmas_wreath.glb"
+          scale="2 2 2"
+          rotation="-90 0 0"
+          visible="false"
+        ></a-entity>
       </a-marker>
 
-      <a-marker
-        type="pattern"
-        url="assets/markers/pattern-christmas_hat.patt"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
-      >
-        <a-entity>
-          <a-entity
-            class="animated"
-            gltf-model="assets/models/santa_claus.glb"
-            scale="0.9 0.9 0.9"
-            visible="false"
-          ></a-entity>
-        </a-entity>
+      <a-marker type="pattern" url="assets/markers/pattern-christmas_hat.patt">
+        <a-entity
+          class="animated"
+          gltf-model="assets/models/santa_claus.glb"
+          scale="0.9 0.9 0.9"
+          visible="false"
+        ></a-entity>
       </a-marker>
 
-      <a-marker
-        type="pattern"
-        url="assets/markers/pattern-fireplace_fire.patt"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
-      >
-        <a-entity>
-          <a-entity
-            class="animated"
-            gltf-model="assets/models/fireplace_fire.glb"
-            scale="5 5 5"
-            visible="false"
-          ></a-entity>
-        </a-entity>
+      <a-marker type="pattern" url="assets/markers/pattern-fireplace_fire.patt">
+        <a-entity
+          class="animated"
+          gltf-model="assets/models/fireplace_fire.glb"
+          scale="5 5 5"
+          visible="false"
+        ></a-entity>
       </a-marker>
 
-      <a-marker
-        type="pattern"
-        url="assets/markers/pattern-gift_2.patt"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
-      >
-        <a-entity>
-          <a-entity
-            gltf-model="assets/models/gift_2.glb"
-            scale="5 5 5"
-            visible="false"
-          ></a-entity>
-        </a-entity>
+      <a-marker type="pattern" url="assets/markers/pattern-gift_2.patt">
+        <a-entity
+          gltf-model="assets/models/gift_2.glb"
+          scale="5 5 5"
+          visible="false"
+        ></a-entity>
       </a-marker>
 
-      <a-marker
-        type="pattern"
-        url="assets/markers/pattern-gift_3.patt"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
-      >
-        <a-entity>
-          <a-entity
-            gltf-model="assets/models/gift_3.glb"
-            scale="2 2 2"
-            visible="false"
-          ></a-entity>
-        </a-entity>
+      <a-marker type="pattern" url="assets/markers/pattern-gift_3.patt">
+        <a-entity
+          gltf-model="assets/models/gift_3.glb"
+          scale="2 2 2"
+          visible="false"
+        ></a-entity>
       </a-marker>
 
-      <a-marker
-        type="pattern"
-        url="assets/markers/pattern-gift_4.patt"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
-      >
-        <a-entity>
-          <a-entity
-            gltf-model="assets/models/gift_4.glb"
-            scale="2 2 2"
-            visible="false"
-          ></a-entity>
-        </a-entity>
+      <a-marker type="pattern" url="assets/markers/pattern-gift_4.patt">
+        <a-entity
+          gltf-model="assets/models/gift_4.glb"
+          scale="2 2 2"
+          visible="false"
+        ></a-entity>
       </a-marker>
 
-      <a-marker
-        type="pattern"
-        url="assets/markers/pattern-gift_5.patt"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
-      >
-        <a-entity>
-          <a-entity
-            gltf-model="assets/models/gift_5.glb"
-            scale="2 2 2"
-            visible="false"
-          ></a-entity>
-        </a-entity>
+      <a-marker type="pattern" url="assets/markers/pattern-gift_5.patt">
+        <a-entity
+          gltf-model="assets/models/gift_5.glb"
+          scale="2 2 2"
+          visible="false"
+        ></a-entity>
       </a-marker>
 
       <a-marker
         type="pattern"
         url="assets/markers/pattern-gingerbread_cottage.patt"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
       >
-        <a-entity rotation="-90 0 0">
-          <a-entity
-            gltf-model="assets/models/gingerbread_cottage.glb"
-            scale="0.7 0.7 0.7"
-            visible="false"
-          ></a-entity>
-        </a-entity>
+        <a-entity
+          gltf-model="assets/models/gingerbread_cottage.glb"
+          scale="0.7 0.7 0.7"
+          rotation="-90 0 0"
+          visible="false"
+        ></a-entity>
       </a-marker>
 
-      <a-marker
-        type="pattern"
-        url="assets/markers/pattern-gingerbread.patt"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
-      >
-        <a-entity rotation="-90 0 0">
-          <a-entity
-            gltf-model="assets/models/gingerbread.glb"
-            scale="0.7 0.7 0.7"
-            visible="false"
-          ></a-entity>
-        </a-entity>
+      <a-marker type="pattern" url="assets/markers/pattern-gingerbread.patt">
+        <a-entity
+          gltf-model="assets/models/gingerbread.glb"
+          scale="0.7 0.7 0.7"
+          rotation="-90 0 0"
+          visible="false"
+        ></a-entity>
       </a-marker>
 
-      <a-marker
-        type="pattern"
-        url="assets/markers/pattern-snowflake.patt"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
-      >
-        <a-entity>
-          <a-entity
-            class="animated"
-            gltf-model="assets/models/snowflake.glb"
-            scale="3 3 3"
-            visible="false"
-          ></a-entity>
-        </a-entity>
+      <a-marker type="pattern" url="assets/markers/pattern-snowflake.patt">
+        <a-entity
+          class="animated"
+          gltf-model="assets/models/snowflake.glb"
+          scale="3 3 3"
+          visible="false"
+        ></a-entity>
       </a-marker>
-      
+
       <!-- <a-marker type="pattern" url="assets/markers/pattern-linux.patt">
         <a-entity
           gltf-model="assets/models/linux.glb"
