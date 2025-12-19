@@ -66,12 +66,16 @@
       </a-marker>
 
       <a-marker type="pattern" url="assets/markers/pattern-fire.patt">
-        <a-entity
-          class="ar-model animated"
-          gltf-model="assets/models/fireplace_fire.glb"
-          scale="7 7 7"
-          position="0 -0.5 0"
-        >
+        <!-- CONTENEDOR (define dónde nace el modelo) -->
+        <a-entity position="0 -0.5 0">
+          <!-- MODELO (solo rotación y escala) -->
+          <a-entity
+            class="ar-model animated"
+            gltf-model="assets/models/fireplace_fire.glb"
+            scale="7 7 7"
+            rotation="90 0 0"
+          >
+          </a-entity>
         </a-entity>
       </a-marker>
 
